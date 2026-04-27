@@ -4,8 +4,8 @@ Este repositório contém scripts Bash desenvolvidos para automatizar tarefas cr
 
 ##  Conteúdo do Repositório
 
-- `scripts/backup.sh`: Realiza o backup compactado de diretórios estratégicos.
-- `scripts/disk-alert.sh`: Monitora o uso de disco e dispara alertas caso o limite seja atingido.
+- `backup_script/backup.sh`: Realiza o backup compactado de diretórios estratégicos.
+- `disk-alert/disk-alert.sh`: Monitora o uso de disco e dispara alertas caso o limite seja atingido.
 
 ---
 
