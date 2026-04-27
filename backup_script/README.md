@@ -4,18 +4,18 @@ Um script robusto de backup que cria backups locais e os sincroniza com Amazon S
 
 ## 🚀 Recursos
 
-- ✅ Backup local com compressão tar.gz
-- ✅ Upload automático para Amazon S3
-- ✅ Verificação de integridade dos backups
-- ✅ Limpeza automática de backups antigos (local e S3)
-- ✅ Logging detalhado com timestamps
-- ✅ Verificação de espaço em disco
-- ✅ Tratamento robusto de erros
-- ✅ Relatórios de execução
-- ✅ Configuração flexível via arquivo externo
-- ✅ Tags S3 para organização
+-  Backup local com compressão tar.gz
+-  Upload automático para Amazon S3
+-  Verificação de integridade dos backups
+-  Limpeza automática de backups antigos (local e S3)
+-  Logging detalhado com timestamps
+-  Verificação de espaço em disco
+-  Tratamento robusto de erros
+-  Relatórios de execução
+-  Configuração flexível via arquivo externo
+-  Tags S3 para organização
 
-## 📋 Pré-requisitos
+##  Pré-requisitos
 
 ### 1. AWS CLI
 ```bash
@@ -42,7 +42,7 @@ O usuário/role AWS precisa ter as seguintes permissões no bucket S3:
 - `s3:ListBucket`
 - `s3:PutObjectTagging`
 
-## ⚙️ Configuração
+##  Configuração
 
 ### 1. Editar o Arquivo de Configuração
 ```bash
@@ -59,7 +59,7 @@ Configure as seguintes variáveis:
 - `S3_STORAGE_CLASS`: `STANDARD`, `STANDARD_IA`, `GLACIER`
 - `S3_PREFIX`: Pasta dentro do bucket
 
-## 🔧 Uso
+##  Uso
 
 ### Execução Manual
 ```bash
@@ -82,7 +82,7 @@ crontab -e
 0 3 * * 0 /caminho/completo/backup.sh
 ```
 
-## 📁 Estrutura de Arquivos
+##  Estrutura de Arquivos
 
 ```
 .
@@ -91,7 +91,7 @@ crontab -e
 └── README.md          # Este documento
 ```
 
-## 📊 Logs e Relatórios
+##  Logs e Relatórios
 
 O script gera logs detalhados em `/var/log/backup.log`:
 - Timestamps em todas as operações
@@ -100,25 +100,7 @@ O script gera logs detalhados em `/var/log/backup.log`:
 - Operações de limpeza
 - Relatório final com estatísticas
 
-### Exemplo de Log
-```
-[2024-04-27 14:30:15] === INÍCIO DO PROCESSO DE BACKUP ===
-[2024-04-27 14:30:15] Iniciando backup do diretório: /var/www/html
-[2024-04-27 14:30:45] Backup local criado com sucesso: /backup/backup-20240427_143045.tar.gz (245M)
-[2024-04-27 14:30:45] Integridade do backup verificada com sucesso
-[2024-04-27 14:31:20] Upload para S3 concluído com sucesso
-[2024-04-27 14:31:21] Tags adicionadas ao objeto S3
-[2024-04-27 14:31:21] === RELATÓRIO DE BACKUP ===
-[2024-04-27 14:31:21] Arquivo: backup-20240427_143045.tar.gz
-[2024-04-27 14:31:21] Tamanho local: 245M
-[2024-04-27 14:31:21] Espaço usado local: 735M
-[2024-04-27 14:31:21] Backups no S3: 12
-[2024-04-27 14:31:21] Backup concluído com sucesso!
-[2024-04-27 14:31:21] =========================
-[2024-04-27 14:31:21] === PROCESSO DE BACKUP CONCLUÍDO ===
-```
-
-## 🔍 Verificação e Monitoramento
+##  Verificação e Monitoramento
 
 ### Verificar Backups no S3
 ```bash
@@ -141,7 +123,7 @@ tail -n 50 /var/log/backup.log
 grep "ERRO" /var/log/backup.log
 ```
 
-## 🛠️ Solução de Problemas
+##  Solução de Problemas
 
 ### Erros Comuns
 
@@ -176,7 +158,7 @@ set -x
 # ... resto do script
 ```
 
-## 🔐 Segurança
+##  Segurança
 
 ### Boas Práticas
 1. **IAM Roles**: Use IAM Roles em vez de chaves de acesso quando possível
@@ -192,7 +174,7 @@ ENABLE_ENCRYPTION=true
 GPG_RECIPIENT="email@example.com"
 ```
 
-## 📈 Performance
+##  Performance
 
 ### Otimizações
 - Use `STANDARD_IA` para backups menos acessados
@@ -207,7 +189,7 @@ Monitore os seguintes métricas:
 - Uso de banda
 - Espaço em disco local
 
-## 🔄 Backup e Recovery
+##  Backup e Recovery
 
 ### Recuperação de Dados
 ```bash
@@ -233,6 +215,6 @@ tar -tzf /tmp/test-backup.tar.gz | head -10
 
 Este script é fornecido "como está" para uso livre. Modifique conforme necessário para seu ambiente.
 
-## 🤝 Contribuições
+##  Contribuições
 
 Sinta-se à vontade para contribuir com melhorias, correções de bugs ou novas funcionalidades.
